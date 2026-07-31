@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #0f766e, #2563eb);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  min-height: 100vh;
+}
+
+.app {
+  padding: 30px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.navbar h1 {
+  color: white;
+  font-size: 2.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: 1px;
+}
+
+/* ================= SEARCH ================= */
+
+.search-box {
+  width: 100%;
+  max-width: 650px;
+  margin: auto;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 18px 20px 18px 55px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  transition: 0.4s;
+}
+
+.search-box input:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+}
+
+.search-icon {
+  position: absolute;
+  left: 22px;
+  top: 18px;
+  color: gray;
+}
+
+/* ================= GRID ================= */
+
+.meal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 28px;
+}
+
+/* ================= CARD ================= */
+
+.meal-card {
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(15px);
+  border-radius: 22px;
+  overflow: hidden;
+  transition: .4s;
+  box-shadow: 0 10px 25px rgba(0,0,0,.2);
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: .5s;
+}
+
+.meal-card:hover img {
+  transform: scale(1.08);
+}
+
+/* ================= HEART ================= */
+
+.favorite-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  background: rgba(255,255,255,.9);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: .3s;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.15);
+}
+
+.favorite-btn svg {
+  color: gray;
+}
+
+.favorite-btn.liked svg {
+  color: red;
+}
+
+/* ================= CONTENT ================= */
+
+.meal-content {
+  padding: 20px;
+}
+
+.meal-content h2 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+/* ================= BADGES ================= */
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.badges span {
+  background: rgba(255,255,255,.15);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ================= BUTTON ================= */
+
+.watch-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #ef4444;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: .3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.watch-btn:hover {
+  background: #dc2626;
+  transform: translateY(-3px);
+}
+
+/* ================= LOADER ================= */
+
+.loader-container {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.loader {
+  width: 70px;
+  height: 70px;
+  border: 7px solid rgba(255,255,255,.2);
+  border-top: 7px solid cyan;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: cyan;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes gradientBG {
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+.app{
+padding:20px;
+}
+
+.navbar h1{
+font-size:2rem;
+}
+
+.search-box input{
+font-size:15px;
+padding:15px 18px 15px 50px;
+}
+
+.image-container img{
+height:210px;
+}
+
+.meal-content h2{
+font-size:20px;
+}
+
+}
